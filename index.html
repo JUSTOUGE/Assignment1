@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to the Beat</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="image-placeholder">
+            <img id="greenBoy"
+                 src="images/ClickToTheBeat/GreenBoyDim.svg"
+                 alt="Green Boy with Red Hat"
+                 onclick="changeImage('greenBoy')">
+        </div>
+
+        <div class="image-placeholder">
+            <img id="blueBoy"
+                 src="images/ClickToTheBeat/BlueBoyDim.svg"
+                 alt="Blue Boy with Orange Hat"
+                 onclick="changeImage('blueBoy')">
+        </div>
+
+        <div class="image-placeholder">
+            <img id="purpleBoy"
+                 src="images/ClickToTheBeat/PurpleBoyDim.svg"
+                 alt="Purple Boy with Yellow Hat"
+                 onclick="changeImage('purpleBoy')">
+        </div>
+
+    </main>
+
+    <script>
+
+    // Sound effects
+    let greenSound = new Audio("sounds/Kick.mp3");
+    let blueSound = new Audio("sounds/HiHat.mp3");
+    let purpleSound = new Audio("sounds/Snare.mp3");
+
+    function changeImage(id) {
+
+        let image = document.getElementById(id);
+
+        if (id == "greenBoy") {
+            image.src = "images/ClickToTheBeat/GreenBoyLit.svg";
+
+            greenSound.currentTime = 0;
+            greenSound.play();
+
+            setTimeout(function() {
+                image.src = "images/ClickToTheBeat/GreenBoyDim.svg";
+            }, 200);
+        }
+
+        else if (id == "blueBoy") {
+            image.src = "images/ClickToTheBeat/BlueBoyLit.svg";
+
+            blueSound.currentTime = 0;
+            blueSound.play();
+
+            setTimeout(function() {
+                image.src = "images/ClickToTheBeat/BlueBoyDim.svg";
+            }, 200);
+        }
+
+        else if (id == "purpleBoy") {
+            image.src = "images/ClickToTheBeat/PurpleBoyLit.svg";
+
+            purpleSound.currentTime = 0;
+            purpleSound.play();
+
+            setTimeout(function() {
+                image.src = "images/ClickToTheBeat/PurpleBoyDim.svg";
+            }, 200);
+        }
+
+    }
+
+    </script>
+
+</body>
+</html>
